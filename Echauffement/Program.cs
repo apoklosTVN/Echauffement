@@ -9,7 +9,7 @@ class Program
          */
 
         // Etape 1 : présentez-vous en écrivant votre prénom et votre jeu préféré
-        Console.WriteLine("Hi, My name is Kevin000");
+        Console.WriteLine("Hi, My name is Kevin");
         Console.WriteLine("My favourite name is NieR:Automata");
         // Etape 2 : demandez à l'utilisateur son prénom et son âge
         Console.WriteLine("What is your name?");
@@ -31,7 +31,9 @@ class Program
             Console.WriteLine("You are an Adult");
         }
         // Etape 4 : demandez maintenant à l'utilisateur combien d'euro il a (nombre décimal)
-
+        Console.WriteLine("How much money do you have? XXXX.XXX");
+        double money = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("You have " + money + "€");
         // Etape 5 : affichez maintenant 4 choix d'armes avec chacune un prix
 
         // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
