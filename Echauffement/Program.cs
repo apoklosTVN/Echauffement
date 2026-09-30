@@ -19,7 +19,7 @@ class Program
             name = Console.ReadLine();
         }
         string age1 = "";
-        while ( age1 == "" )
+        while (age1 == "")
         {
             Console.WriteLine("How old are you?");
             age1 = Console.ReadLine();
@@ -33,7 +33,7 @@ class Program
         else if (age < 18)
         {
             Console.WriteLine("Hello," + name + ". You are a Minor");
-        } 
+        }
         else if (age > 18)
         {
             Console.WriteLine("Hello," + name + ". You are an Adult");
@@ -45,7 +45,7 @@ class Program
         Console.WriteLine("Press any key to continue...");
         Console.ReadKey();
         // Etape 5 : affichez maintenant 4 choix d'armes avec chacune un prix
-        string[] weaponname = {"", "Virtuous Contract", "Cruel Oath", "Virtuous Treaty", "Cruel Blood Oath" };
+        string[] weaponname = { "", "Virtuous Contract", "Cruel Oath", "Virtuous Treaty", "Cruel Blood Oath" };
         double[] weaponprice = { 0, 310.31, 129.13, 19321.13, 1313131313131313 };
         Console.WriteLine("Welcome to the Shop!");
         Console.WriteLine("We have 4 weapons in Stock");
@@ -61,19 +61,19 @@ class Program
         switch (weapon)
         {
             case 1:
-                Console.WriteLine("You have chosen " + weaponname[1] + " this weapon costs " + weaponprice[1]);
-                
+                Console.WriteLine("You have chosen " + weaponname[1] + ", this weapon costs " + weaponprice[1]);
+
                 break;
             case 2:
-                Console.WriteLine("You have chosen " + weaponname[2] + " this weapon costs " + weaponprice[2]);
+                Console.WriteLine("You have chosen " + weaponname[2] + ", this weapon costs " + weaponprice[2]);
 
                 break;
             case 3:
-                Console.WriteLine("You have chosen " + weaponname[3] + " this weapon costs " + weaponprice[3]);
+                Console.WriteLine("You have chosen " + weaponname[3] + ", this weapon costs " + weaponprice[3]);
 
                 break;
             case 4:
-                Console.WriteLine("You have chosen " + weaponname[4] + " this weapon costs " + weaponprice[4]);
+                Console.WriteLine("You have chosen " + weaponname[4] + ", this weapon costs " + weaponprice[4]);
 
                 break;
 
@@ -87,14 +87,25 @@ class Program
             Console.ReadKey();
         }
         else
-         {
+        {
             Console.WriteLine("Bitch, U poor, gtfo");
         }
         // Etape 7b : modifiez l'étape 7a pour ajouter un connecteur logique qui vérifie que l'utilisateur est majeur en plus d'avoir assez d'argent
         // Lorsque l'utilisateur respecte ces demandes, retirez le prix de l'arme de l'argent de l'utilisateur, puis confirmez à l'utilisateur que l'action a été effectuée 
         // Dans tous les autres cas, informez l'utilisateur que l'action n'a pas été possible
-
-        /*
+        if (age >= 18 && (weaponprice[weapon] <= money))
+        {
+            Console.WriteLine("You have bought the" + weaponname[weapon] + ", You now have " + (money - weaponprice[weapon]));
+        }
+        else if (weaponprice[weapon] <= money)
+        {
+            Console.WriteLine("Ur too young to buy this");
+        }
+        else 
+            {
+            Console.WriteLine("");
+            }
+            /*
          * Après votre dernier commit, faites un push de votre projet pour qu'il soit accessible sur github.com
          */
     }
