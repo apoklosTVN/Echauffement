@@ -39,7 +39,7 @@ class Program
         {
             Console.WriteLine("Hello," + name + ". You are a Minor");
         }
-        else if (age > 18)
+        else if (age >= 18)
         {
             Console.WriteLine("Hello," + name + ". You are an Adult");
         }
