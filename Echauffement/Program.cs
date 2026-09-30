@@ -12,7 +12,11 @@ class Program
         Console.WriteLine("Hi, My name is Kevin000");
         Console.WriteLine("My favourite name is NieR:Automata");
         // Etape 2 : demandez à l'utilisateur son prénom et son âge
-        
+        Console.WriteLine("What is your name?");
+        string name = Console.ReadLine();
+        Console.WriteLine("How old are you?");
+        string age = Console.ReadLine();
+
         // Etape 3 : affichez soit "Tu es majeur", soit "Tu es mineur" dépendant de l'âge fourni par l'utilisateur
         
         // Etape 4 : demandez maintenant à l'utilisateur combien d'euro il a (nombre décimal)
