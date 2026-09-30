@@ -18,11 +18,13 @@ class Program
             Console.WriteLine("What is your name?");
             name = Console.ReadLine();
         }
-        string age1 = "";
-        while (age1 == "")
+        int age1 = 0;
+        while (age1 == 0)
         {
             Console.WriteLine("How old are you?");
-            age1 = Console.ReadLine();
+            age1 = Convert.ToInt32(Console.ReadLine());
+            if (age1 < 0 );
+            Console.WriteLine("You can't be negative years old.");
         }
         // Etape 3 : affichez soit "Tu es majeur", soit "Tu es mineur" dépendant de l'âge fourni par l'utilisateur
         age = Convert.ToInt32(age1);
@@ -82,24 +84,24 @@ class Program
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
         if (weaponprice[weapon] <= money)
         {
-            Console.WriteLine("You have enough money to buy this");
+            Console.WriteLine("You have enough money to buy this.");
             Console.WriteLine("Press any key to continue...");
             Console.ReadKey();
         }
         else
         {
-            Console.WriteLine("Bitch, U poor, gtfo");
+            Console.WriteLine("You do not have enough money to purchase this weapon, gtfo.");
         }
         // Etape 7b : modifiez l'étape 7a pour ajouter un connecteur logique qui vérifie que l'utilisateur est majeur en plus d'avoir assez d'argent
         // Lorsque l'utilisateur respecte ces demandes, retirez le prix de l'arme de l'argent de l'utilisateur, puis confirmez à l'utilisateur que l'action a été effectuée 
         // Dans tous les autres cas, informez l'utilisateur que l'action n'a pas été possible
         if (age >= 18 && (weaponprice[weapon] <= money))
         {
-            Console.WriteLine("You have bought the" + weaponname[weapon] + ", You now have " + (money - weaponprice[weapon]));
+            Console.WriteLine("You have bought the" + weaponname[weapon] + ", You now have " + (money - weaponprice[weapon] + "euros."));
         }
         else if (weaponprice[weapon] <= money)
         {
-            Console.WriteLine("Ur too young to buy this");
+            Console.WriteLine("Minors are unauthorized to purchase weapons.");
         }
         else 
             {
