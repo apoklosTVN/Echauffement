@@ -23,8 +23,11 @@ class Program
         {
             Console.WriteLine("How old are you?");
             age1 = Convert.ToInt32(Console.ReadLine());
-            if (age1 < 0 );
-            Console.WriteLine("You can't be negative years old.");
+            if (age1 < 0)
+            {
+                Console.WriteLine("You can't be negative years old.");
+            }
+
         }
         // Etape 3 : affichez soit "Tu es majeur", soit "Tu es mineur" dépendant de l'âge fourni par l'utilisateur
         age = Convert.ToInt32(age1);
@@ -58,29 +61,37 @@ class Program
 
 
         // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
-        Console.WriteLine("Please choose a weapon, Enter a Number");
-        int weapon = Convert.ToInt32(Console.ReadLine());
-        switch (weapon)
+        int weapon = 0;
+        while (weapon <= 0 || weapon > 4)
         {
-            case 1:
-                Console.WriteLine("You have chosen " + weaponname[1] + ", this weapon costs " + weaponprice[1]);
+            Console.WriteLine("Please choose a weapon, Enter a Number");
+            weapon = Convert.ToInt32(Console.ReadLine());
 
-                break;
-            case 2:
-                Console.WriteLine("You have chosen " + weaponname[2] + ", this weapon costs " + weaponprice[2]);
 
-                break;
-            case 3:
-                Console.WriteLine("You have chosen " + weaponname[3] + ", this weapon costs " + weaponprice[3]);
+            switch (weapon)
+            {
+                case 1:
+                    Console.WriteLine("You have chosen " + weaponname[1] + ", this weapon costs " + weaponprice[1]);
 
-                break;
-            case 4:
-                Console.WriteLine("You have chosen " + weaponname[4] + ", this weapon costs " + weaponprice[4]);
+                    break;
+                case 2:
+                    Console.WriteLine("You have chosen " + weaponname[2] + ", this weapon costs " + weaponprice[2]);
 
-                break;
+                    break;
+                case 3:
+                    Console.WriteLine("You have chosen " + weaponname[3] + ", this weapon costs " + weaponprice[3]);
 
+                    break;
+                case 4:
+                    Console.WriteLine("You have chosen " + weaponname[4] + ", this weapon costs " + weaponprice[4]);
+
+                    break;
+                default:
+                    Console.WriteLine("Invalid Choice");
+                    break;
+
+            }
         }
-
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
         if (weaponprice[weapon] <= money)
         {
@@ -95,6 +106,7 @@ class Program
         // Etape 7b : modifiez l'étape 7a pour ajouter un connecteur logique qui vérifie que l'utilisateur est majeur en plus d'avoir assez d'argent
         // Lorsque l'utilisateur respecte ces demandes, retirez le prix de l'arme de l'argent de l'utilisateur, puis confirmez à l'utilisateur que l'action a été effectuée 
         // Dans tous les autres cas, informez l'utilisateur que l'action n'a pas été possible
+        
         if (age >= 18 && (weaponprice[weapon] <= money))
         {
             Console.WriteLine("You have bought the" + weaponname[weapon] + ", You now have " + (money - weaponprice[weapon] + "euros."));
