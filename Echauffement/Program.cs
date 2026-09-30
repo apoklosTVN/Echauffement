@@ -53,10 +53,31 @@ class Program
         Console.WriteLine("2:  " + weaponname[1] + "   :" + weaponprice[1] + " Euros");
         Console.WriteLine("3:  " + weaponname[2] + "   :" + weaponprice[2] + " Euros");
         Console.WriteLine("4:  " + weaponname[3] + "   :" + weaponprice[3] + " Euros");
-        
-        
-        // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
 
+
+        // Etape 6 : laissez l'utilisateur choisir l'une de ces 4 armes en indiquant un nombre entre 1 et 4
+        Console.WriteLine("Please choose a weapon, Enter a Number");
+        int weapon = Convert.ToInt32(Console.ReadLine());
+        switch (weapon)
+        {
+            case 1:
+                Console.WriteLine("You have chosen" + weaponname[0] + "this weapon costs" + weaponprice[0]);
+                
+                break;
+            case 2:
+                Console.WriteLine("You have chosen" + weaponname[1] + "this weapon costs" + weaponprice[1]);
+
+                break;
+            case 3:
+                Console.WriteLine("You have chosen" + weaponname[2] + "this weapon costs" + weaponprice[2]);
+
+                break;
+            case 4:
+                Console.WriteLine("You have chosen" + weaponname[3] + "this weapon costs" + weaponprice[3]);
+
+                break;
+
+        }
         // Etape 7a : vérifiez si l'utilisateur a assez d'argent par rapport à la somme qu'il avait rentré à l'étape 4
 
         // Etape 7b : modifiez l'étape 7a pour ajouter un connecteur logique qui vérifie que l'utilisateur est majeur en plus d'avoir assez d'argent
